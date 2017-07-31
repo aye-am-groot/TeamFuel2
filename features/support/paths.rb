@@ -14,8 +14,39 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
-
+      '/donors'
+    
+    when /^the home\s?page$/
+      '/organizations'
+      
+    when /^the (Fuel Donation Management System )?home\s?page$/ then '/welcome/index'
+    #when /^the Fuel Donation Management System home page$/ then '/organizations'
+    #when /^the home page$/ then '/organizations'
+      
+   
+    #when /^the Fuel Donation Management System home page$/ then '/donors'
+    #when /^the home page$/ then '/donors'
+      
+    when /^the Current Organizations page$/ then '/organizations'
+#      organization_path Organization.all
+    when /^the Current Donors page$/ then '/donors'
+      
+    when /^the New Donor page$/ then '/donors/new'
+    
+    #when /^the edit donor page$/ then 'donors/:id/edit'
+    
+    when /^the New Donor page$/
+      new_donor_path
+     
+    when /^the edit donor page for "(.+)"$/
+      edit_donor_path
+      
+    when /^the donors page$/ 
+      donors_path
+      
+    when /^the edit donor page$/
+      :id/edit_donor_path
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

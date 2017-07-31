@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %strong Item Number:
+  = @inventory.itemnum
+%p
+  %strong Organization Number:
+  = @inventory.orgnum
+%p
+  %strong Quantity:
+  = @inventory.quantity
+%p
+  %strong Expired Date:
+  = @inventory.expires
+
+= link_to 'Edit', edit_inventory_path(@inventory)
+\|
+= link_to 'Back', inventories_path

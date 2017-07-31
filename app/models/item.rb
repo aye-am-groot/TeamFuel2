@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
-    validates :itemName, presence: true, length: {minimum: 4}
-    validates :category, presence: true
+    validates_presence_of :itemName, :category
+    belongs_to :inventory
+    public :itemName, :category
 end

@@ -1,0 +1,28 @@
+%h1 Listing inventories
+
+%table#inventories
+  %thead
+    %tr
+      -#%th{:class => @itemname_header}= link_to 'Item Name', items_path(:sort => 'itemName'), :id => 'itemname_header'
+      %th Item Number
+      %th Organization Number
+      %th Quantity
+      %th Expired Date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @inventories.each do |inventory|
+      %tr
+        %td= inventory.itemnum
+        %td= inventory.orgnum
+        %td= inventory.quantity
+        %td= inventory.expires
+        %td= link_to 'Show', inventory
+        %td= link_to 'Edit', edit_inventory_path(inventory)
+        %td= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'Add to Inventory', new_inventory_path

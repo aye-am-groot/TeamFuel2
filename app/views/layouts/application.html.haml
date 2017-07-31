@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Fuel Donation Management System
+    = stylesheet_link_tag "application" 
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    
+  %body
+    %h1.title
+      = link_to "Fuel Donation Management System", controller: 'welcome'
+    #content= content_for?(:content) ? yield(:content) : yield
+    #main
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]

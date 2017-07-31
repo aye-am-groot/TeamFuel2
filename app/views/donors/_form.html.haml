@@ -1,0 +1,21 @@
+= form_for @donor do |f|
+    - if @donor.errors.any?
+        #error_explanation
+            %h2
+                = pluralize(@donor.errors.count, 'error')
+                prohibited this donor from being saved:
+            %u1
+                - @donor.errors.full_messages.each do |msg|
+                    %li= msg
+    %p
+        = f.label :donorName, :Name
+        %br/
+        = f.text_field :donorName
+    
+    %p
+        = f.label :phoneNum, :Phone
+        %br/
+        = f.text_field :phoneNum
+    
+    %p
+        = f.submit
