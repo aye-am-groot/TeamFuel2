@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use Haml for templates
 gem 'haml'
+gem 'haml-rails', '>= 0.3.4', :group => :development
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -43,6 +44,8 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails', '3.3.2'
   gem 'ZenTest', '4.11.0'
+  gem 'factory_girl_rails'
+  gem 'faker'
   
   # Use sqlite3 as the database for Active Record in dev and test only
   gem 'sqlite3'
